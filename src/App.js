@@ -207,14 +207,13 @@ export default function App() {
                 Tıp öğrencilerinden <span className="text-sky-700">dünyaya</span> seslenen bir dergi.
               </h1>
               <p className="mt-4 max-w-prose text-base leading-relaxed text-slate-600">
-                TurkMSIC Dergi; insan hakları, sağlık ve barış odaklı yazıların buluşma noktası. Her sayıda yeni bir
-                bakış açısı, her satırda bir farkındalık.
+                Değerli Gönüllülerimiz, birliğimizin dış görünürlüğünü temsil etmede payı oldukça yüksek olan Yayın Destek Birimi'mizin çalışmalarını her yıl biraz daha ileriye taşımayı amaçlamakta bu bağlamda adımlarımızı atmaktayız. TurkMSIC Dergi, gerek ulusal yapılanmamızın gerek yerel birliklerimizin katkılarıyla oluşturulan ve birliğimizin dış görünürlüğü için önem arz eden hepimize ait bir dergidir.
               </p>
               <div className="mt-6 flex flex-wrap gap-3">
                 <PrimaryButton href="#son-sayi">Son Sayıyı Oku</PrimaryButton>
                 <OutlineButton href="#katki">Katkıda Bulun</OutlineButton>
               </div>
-              <div className="mt-6 text-xs text-slate-500">Ceviz Ağacı’ndan doğan yeni bir hikâye.</div>
+              
             </div>
             <div className="relative">
               <div className="absolute -inset-6 -z-10 rounded-3xl bg-sky-100 blur-2xl" />
@@ -271,12 +270,11 @@ export default function App() {
             <div>
               <h3 className="text-2xl font-bold">Sen de yaz, sen de anlat.</h3>
               <p className="mt-3 text-slate-600">
-                Backend olmadan da hızlıca katkı alabilmek için form bilgilerini e‑posta taslağına dönüştürüyoruz. ITSD
-                daha sonra Google Form/Backend ile entegre edebilir.
+                Sen de dilersen TurkMSIC Dergi yeni sayısına katkıda bulunabilirsin. Dergimize katkı sağlayarak sahip olduğun bilgileri daha geniş bir kitleyle paylaşma imkanı bulabilir, okuyucular üzerinde etki bırakma ve düşündürme potansiyeli bulabilirsin. 
               </p>
               <ul className="mt-4 list-inside list-disc text-sm text-slate-600">
-                <li>Yazı / İllüstrasyon / Fotoğraf kategorilerinden birini seç.</li>
-                <li>Varsa çalışmana ait bir paylaşım linki ekleyebilirsin (Drive, Notion, vb.).</li>
+                <li>Yazı/Fotoğraf kategorilerinden birini seç.</li>
+                <li>Çalışmana ait bir paylaşım linki ekleyebilirsin (Drive linki).</li>
               </ul>
             </div>
             <form onSubmit={submitForm} id="katki-form" className="rounded-3xl border border-slate-200 p-6 shadow-sm">
@@ -291,8 +289,8 @@ export default function App() {
                   <label className="text-sm">Kategori
                     <select value={form.kategori} onChange={(e)=>setForm({...form, kategori:e.target.value})} className="mt-1 w-full rounded-xl border border-slate-300 px-3 py-2 focus:border-sky-500 focus:outline-none">
                       <option>Yazı</option>
-                      <option>İllüstrasyon</option>
-                      <option>Fotoğraf</option>
+                    
+                      <option>Görsel</option>
                     </select>
                   </label>
                   <label className="text-sm">Başlık
@@ -300,16 +298,16 @@ export default function App() {
                   </label>
                 </div>
                 <label className="text-sm">Çalışma Linki (opsiyonel)
-                  <input value={form.link} onChange={(e)=>setForm({...form, link:e.target.value})} className="mt-1 w-full rounded-xl border border-slate-300 px-3 py-2 focus:border-sky-500 focus:outline-none" placeholder="Drive/Notion bağlantısı" />
+                  <input value={form.link} onChange={(e)=>setForm({...form, link:e.target.value})} className="mt-1 w-full rounded-xl border border-slate-300 px-3 py-2 focus:border-sky-500 focus:outline-none" placeholder="Drive bağlantısı" />
                 </label>
                 {formErr && <div className="rounded-xl bg-red-50 px-3 py-2 text-sm text-red-700">{formErr}</div>}
                 <div className="flex gap-3">
                   <PrimaryButton href="#" >
                     <button type="submit">E‑posta ile Gönder</button>
                   </PrimaryButton>
-                  <OutlineButton href="#">Yazım Kılavuzu (PDF)</OutlineButton>
+                  <OutlineButton href="https://drive.google.com/file/d/13mnERpcb2yKGnGB4JMXwgTUdYY-RTceN/view?usp=sharing">Yazım Kılavuzu (PDF)</OutlineButton>
                 </div>
-                <div className="text-xs text-slate-500">Dosya yükleme için geçici çözüm: link paylaş. ITSD entegre edince formla yüklenebilecek.</div>
+               
               </div>
             </form>
           </div>
@@ -323,23 +321,23 @@ export default function App() {
             <div>
               <h3 className="text-2xl font-bold">TurkMSIC Dergi nedir?</h3>
               <p className="mt-3 text-slate-600">
-                Tıp fakültesi öğrencilerinin kaleminden; sağlık, toplum ve insan hakları ekseninde çok sesli bir yayın.
-                Ulusal ölçekte yayımlanır, her sayıda farklı tema ve dosyalar içerir.
+                TurkMSIC gönüllülerinin kaleminden; sağlık, toplum ve insan hakları ekseninde çok sesli bir yayın.
+                Ulusal ölçekte yayımlanır, her sayısında TurkMSIC gönüllülerini temsil eder.
               </p>
               <p className="mt-3 text-slate-600">
                 Akademik titizlikle, samimi bir üslupla yazılmış içerikler; saha deneyimleri, röportajlar ve özgün
-                illüstrasyonlarla buluşur.
+                illüstrasyonlar.
               </p>
             </div>
             <div className="rounded-3xl border border-slate-200 p-6 shadow-sm">
-              <h4 className="text-lg font-semibold">Editör Ekibi</h4>
+              <h4 className="text-lg font-semibold">TurkMSIC Dergi Ekibi</h4>
               <ul className="mt-3 space-y-2 text-sm text-slate-700">
-                <li>Genel Yayın Yönetmeni — <span className="font-medium">(isim)</span></li>
-                <li>Yardımcı Editör — <span className="font-medium">(isim)</span></li>
-                <li>Sanat Yönetmeni — <span className="font-medium">(isim)</span></li>
-                <li>Katkı Editörleri — <span className="font-medium">(isimler)</span></li>
+                <li>Eş Süpervizör — <span className="font-medium">Burak Güncan</span></li>
+                <li>Eş Süpervizör — <span className="font-medium">Cemal Mert Saraçoğlu</span></li>
+                <li>Editör — <span className="font-medium">(isim)</span></li>
+                <li>Takım — <span className="font-medium">(isimler)</span></li>
               </ul>
-              <div className="mt-4 text-xs text-slate-500">Önceki adıyla “Ceviz Ağacı”.</div>
+              
             </div>
           </div>
         </Container>
